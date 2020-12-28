@@ -1,0 +1,19 @@
+## Docker file
+Dockerfile*
+docker-compose*
+.dockerignore
+
+## Git file
+.git
+.gitignore
+
+## Unnecessary file in a container
+README.md
+.env.dist
+
+## JS package
+node_modules
+yarn.lock
+
+## Directory-based project format:
+.idea

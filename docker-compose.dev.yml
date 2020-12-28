@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  csa:
+    volumes:
+      - .:/app/
+      - /app/node_modules
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - ${PORT}:3000
