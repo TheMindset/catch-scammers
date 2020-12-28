@@ -3,22 +3,18 @@ help:  ## Display this help
 
 include .env
 
-CONTAINER_NAME?=csa
+CONTAINER_NAME=csa
 
 FIG?=docker-compose -f docker-compose.$(NODE_ENV).yml
-#ifeq ($(INFRA_ENV), dev)
-#    FIG   += -f docker-compose.dev.yml
-#endif
-#ifeq ($(INFRA_ENV), ci)
-#    FIG   += -f docker-compose.ci.yml
-#endif
-
 
 dev: ## Build Dockerfile & start the project in dev mode on PORT define in your .env file
 	$(FIG) up
 
 start: ## Build Dockerfile & start the project on PORT define in your .env file
 	$(FIG) up -d
+
+test: Run test
+	docker exec -it $(CONTAINER_NAME) yarn test
 
 bstart: ## Re-build the project based on Dockerfile & start the project based on PORT define in oyur .env file
 	$(FIG) up -d --build
@@ -32,4 +28,4 @@ flogs: ## See and follow project logs
 	$(FIG) logs -f csa
 
 .DEFAULT_GOAL: help
-.PHONY: help start bstart stop reset logs flogs
+.PHONY: help dev start test bstart stop reset logs flogs

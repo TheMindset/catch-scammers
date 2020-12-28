@@ -6,7 +6,10 @@
   "author": "MULEZI Guillaume",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.ts"
+    "dev": "nodemon server.ts",
+    "test": "nyc mocha -r ts-node/register test/**/*.ts --exit --timeout 20000",
+    "lint": "eslint --ext .js,.ts --ignore-path .gitignore .",
+    "lintfix": "eslint --ext .js,.ts --ignore-path .gitignore . --fix"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -35,6 +38,7 @@
     "husky": "^4.2.5",
     "mocha": "^7.1.0",
     "nodemon": "^2.0.4",
+    "nyc": "^15.1.0",
     "prettier": "^2.0.5",
     "sinon-chai": "^3.5.0",
     "ts-node": "^8.10.2",
