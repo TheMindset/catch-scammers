@@ -6,6 +6,7 @@ import * as dotenv from 'dotenv'
 import * as winston from 'winston'
 import { logger } from 'express-winston'
 
+import { getAdsStatusRouter } from './routes/getAdsStatus'
 
 dotenv.config()
 
@@ -20,6 +21,8 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true')
   next()
 })
+
+app.use('/', getAdsStatusRouter)
 
 app.use(
   logger({
