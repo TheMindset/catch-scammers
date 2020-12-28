@@ -13,8 +13,14 @@ dev: ## Build Dockerfile & start the project in dev mode on PORT define in your 
 start: ## Build Dockerfile & start the project on PORT define in your .env file
 	$(FIG) up -d
 
-test: Run test
+test: ## Run test
 	docker exec -it $(CONTAINER_NAME) yarn test
+
+lint: ## Check code
+	docker exec -it $(CONTAINER_NAME) yarn lint
+
+lintfix: ## Clean code
+	docker exec -it $(CONTAINER_NAME) yarn lintfix
 
 bstart: ## Re-build the project based on Dockerfile & start the project based on PORT define in oyur .env file
 	$(FIG) up -d --build
@@ -28,4 +34,4 @@ flogs: ## See and follow project logs
 	$(FIG) logs -f csa
 
 .DEFAULT_GOAL: help
-.PHONY: help dev start test bstart stop reset logs flogs
+.PHONY: help dev start test lint lintfix bstart stop reset flogs
