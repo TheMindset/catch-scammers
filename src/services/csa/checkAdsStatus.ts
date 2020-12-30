@@ -3,11 +3,11 @@ import { GetAdsStatusResult } from '../../../types/csa/getStatusAdsResult'
 import { InspectRequest } from '../../../helpers/InspectRequest'
 
 export const checkAdsStatus = async (req: AdDetailsRequest): Promise<GetAdsStatusResult> => {
-  const fullNameStatus = InspectRequest.inspectFullName(req.contacts)
+  const status = InspectRequest.inspectContacts(req.contacts)
 
   return {
     reference: req.reference,
-    scam: fullNameStatus.length > 0,
-    rules: fullNameStatus
+    scam: status.length > 0,
+    rules: status
   }
 }
