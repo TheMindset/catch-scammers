@@ -7,7 +7,7 @@ CONTAINER_NAME=csa
 
 FIG?=docker-compose -f docker-compose.$(NODE_ENV).yml
 
-dev: ## Build Dockerfile & start the project in dev mode on PORT define in your .env file
+logstart: ## Build Dockerfile & start the project in dev mode on PORT define in your .env file
 	$(FIG) up
 
 start: ## Build Dockerfile & start the project on PORT define in your .env file
@@ -34,4 +34,4 @@ flogs: ## See and follow project logs
 	$(FIG) logs -f csa
 
 .DEFAULT_GOAL: help
-.PHONY: help dev start test lint lintfix bstart stop reset flogs
+.PHONY: help logstart start test lint lintfix bstart stop reset flogs

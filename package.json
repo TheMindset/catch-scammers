@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.ts",
+    "start": "tsc && ts-node dist/server.js",
     "test": "nyc mocha -r ts-node/register test/**/*.ts --exit --timeout 20000",
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore .",
     "lintfix": "eslint --ext .js,.ts --ignore-path .gitignore . --fix"
@@ -46,7 +47,6 @@
     "nodemon": "^2.0.4",
     "nyc": "^15.1.0",
     "prettier": "^2.0.5",
-    "sinon-chai": "^3.5.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   }

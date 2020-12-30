@@ -3,9 +3,6 @@ version: '3.3'
 services:
   csa:
     container_name: csa
-    volumes:
-      - .:/app/
-      - /app/node_modules
     restart: always
     build:
       context: .
