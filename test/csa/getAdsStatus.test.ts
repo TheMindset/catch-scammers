@@ -5,7 +5,8 @@ import {
   adsRequestWrongEmail,
   adsRequestWrongFullName,
   adsRequestWrongPrice,
-  adsRequestWrongRegisterNumber
+  adsRequestWrongRegisterNumber,
+  adsRequestMissedInputs
 } from './requests/adsRequest'
 import chaiHttp = require("chai-http")
 
@@ -79,5 +80,17 @@ describe('/GET getAdsStatus', () => {
     expect(res.body.rules).to.be.an('array')
     expect(res.body.rules).to.include('rule::registernumber::blacklist')
   })
+
+
+  it('it should return an error due to inputs missing', async () => {
+    const res = await chai.request(app.listen())
+      .get('/getAdsStatus')
+      .send(adsRequestMissedInputs)
+
+    expect(res.status).to.deep.equals(400)
+
+    expect(res.body.errors[0]).to.be.an('object')
+    expect(res.body.errors[0].param).to.deep.equals('creationDate')
+    expect(res.body.errors[1].param).to.deep.equals('vehicle.model')  })
 })
 

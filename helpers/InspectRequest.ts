@@ -1,5 +1,5 @@
 import { ContactRequest } from '../types/csa/common'
-import { INTERNE_RULES } from '../utils/constants'
+import { INTERNE_RULES } from '../utils/csa/constants'
 
 export class InspectRequest {
   static inspectContacts (contacts: ContactRequest): Array<string> {

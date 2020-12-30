@@ -1,5 +1,26 @@
 import { AdDetailsRequest } from '../../../types/csa/common'
 
+export const adsRequestMissedInputs = {
+  "contacts": {
+    "firstname": "Christophe",
+    "lastname": "Dupont",
+    "email": "testdepot@yopmail.fr",
+    "phone1": {
+      "value": "0607080901"
+    }
+  },
+  "price": 26000,
+  "publicationOptions": ["STRENGTHS", "BOOST_VO"],
+  "reference": "B300053623",
+  "vehicle": {
+    "make": "HONDA",
+    "version": "IV (2) 1.6 I-DTEC 160 4WD EXCLUSIVE NAVI AT",
+    "category": "SUV_4X4_CROSSOVER",
+    "registerNumber": "AC123AA",
+    "mileage": 100000
+  }
+}
+
 export const adsRequestWrongRegisterNumber: AdDetailsRequest = {
   "contacts": {
     "firstname": "Christophe",

@@ -3,7 +3,7 @@ import { GetAdsStatusResult } from '../../../types/csa/getStatusAdsResult'
 import { InspectRequest } from '../../../helpers/InspectRequest'
 import { quotationService } from '../quotation/quotationService'
 import { inRange } from "../../../helpers/inRange";
-import { QUOTATION_SERVICE_RULE, WHITELISTREGISTERNUMBER, BLACKLIST_SERVICE_RULE } from '../../../utils/constants'
+import { QUOTATION_SERVICE_RULE, WHITELISTREGISTERNUMBER, BLACKLIST_SERVICE_RULE } from '../../../utils/csa/constants'
 
 
 export const checkAdsStatus = async (req: AdDetailsRequest): Promise<GetAdsStatusResult> => {

@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv'
 import * as winston from 'winston'
 import { logger } from 'express-winston'
 
-import { getAdsStatusRouter } from './routes/getAdsStatus'
+import { getAdsStatusRouter } from './routes/csa/getAdsStatus'
 
 dotenv.config()
 
