@@ -1,7 +1,6 @@
 import { AdDetailsRequest } from '../../../types/csa/common'
 
-
-export const adsRequestHappyRequest = {
+export const adsRequestWrongRegisterNumber: AdDetailsRequest = {
   "contacts": {
     "firstname": "Christophe",
     "lastname": "Dupont",
@@ -11,7 +10,30 @@ export const adsRequestHappyRequest = {
     }
   },
   "creationDate": "2020-01-09T09:02:22.610Z",
-  "price": 19000,
+  "price": 26000,
+  "publicationOptions": ["STRENGTHS", "BOOST_VO"],
+  "reference": "B300053623",
+  "vehicle": {
+    "make": "HONDA",
+    "model": "CR-V",
+    "version": "IV (2) 1.6 I-DTEC 160 4WD EXCLUSIVE NAVI AT",
+    "category": "SUV_4X4_CROSSOVER",
+    "registerNumber": "AC123AA",
+    "mileage": 100000
+  }
+}
+
+export const adsRequestWrongPrice: AdDetailsRequest = {
+  "contacts": {
+    "firstname": "Christophe",
+    "lastname": "Dupont",
+    "email": "testdepot@yopmail.fr",
+    "phone1": {
+      "value": "0607080901"
+    }
+  },
+  "creationDate": "2020-01-09T09:02:22.610Z",
+  "price": 12000,
   "publicationOptions": ["STRENGTHS", "BOOST_VO"],
   "reference": "B300053623",
   "vehicle": {
@@ -59,6 +81,29 @@ export const adsRequestWrongEmail: AdDetailsRequest = {
   },
   "creationDate": "2020-01-09T09:02:22.610Z",
   "price": 19000,
+  "publicationOptions": ["STRENGTHS", "BOOST_VO"],
+  "reference": "B300053623",
+  "vehicle": {
+    "make": "HONDA",
+    "model": "CR-V",
+    "version": "IV (2) 1.6 I-DTEC 160 4WD EXCLUSIVE NAVI AT",
+    "category": "SUV_4X4_CROSSOVER",
+    "registerNumber": "AA123AA",
+    "mileage": 100000
+  }
+}
+
+export const adsRequestHappyRequest = {
+  "contacts": {
+    "firstname": "Christophe",
+    "lastname": "Dupont",
+    "email": "testdepot@yopmail.fr",
+    "phone1": {
+      "value": "0607080901"
+    }
+  },
+  "creationDate": "2020-01-09T09:02:22.610Z",
+  "price": 30000,
   "publicationOptions": ["STRENGTHS", "BOOST_VO"],
   "reference": "B300053623",
   "vehicle": {
