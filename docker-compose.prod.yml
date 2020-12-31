@@ -6,6 +6,7 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: docker/Dockerfile.dev
+      dockerfile: docker/Dockerfile.prod
     ports:
       - ${PORT}:3000
+
